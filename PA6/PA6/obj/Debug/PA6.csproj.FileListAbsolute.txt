@@ -8,3 +8,7 @@ C:\Users\anfen\PA6\PA6\PA6\obj\Debug\PA6.csproj.GenerateResource.cache
 C:\Users\anfen\PA6\PA6\PA6\obj\Debug\PA6.csproj.CoreCompileInputs.cache
 C:\Users\anfen\PA6\PA6\PA6\obj\Debug\PA6.exe
 C:\Users\anfen\PA6\PA6\PA6\obj\Debug\PA6.pdb
+C:\Users\anfen\PA6\PA6\PA6\obj\Debug\PA6.frmMain.resources
+C:\Users\anfen\PA6\PA6\PA6\bin\Debug\Newtonsoft.Json.dll
+C:\Users\anfen\PA6\PA6\PA6\bin\Debug\Newtonsoft.Json.xml
+C:\Users\anfen\PA6\PA6\PA6\obj\Debug\PA6.csproj.CopyComplete
