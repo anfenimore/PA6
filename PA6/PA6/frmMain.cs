@@ -51,6 +51,7 @@ namespace PA6
             txtTitleData.Text = myBook.title;
             txtAuthorData.Text = myBook.author;
             txtGenreData.Text = myBook.genre;
+            txtIsbnData.Text = myBook.isbn;
             txtCopiesData.Text = myBook.copies.ToString();
             txtLengthData.Text = myBook.length.ToString();
 
@@ -64,9 +65,67 @@ namespace PA6
             }
         }
 
-        private void txtLength_TextChanged(object sender, EventArgs e)
+        private void btnRent_Click(object sender, EventArgs e)
         {
+            Book myBook = (Book)lstBooks.SelectedItem;
 
+            myBook.copies--;
+            BookFile.SaveBook(myBook, cwid, "edit");
+            LoadList();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+
+            myBook.copies++;
+            BookFile.SaveBook(myBook, cwid, "edit");
+            LoadList();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete?", "Delete", MessageBoxButtons.YesNo);
+
+            if(dialogResult == DialogResult.Yes)
+            {
+                BookFile.DeleteBook(myBook, cwid);
+                LoadList();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Book myBook = (Book)lstBooks.SelectedItem;
+
+            frmEdit myForm = new frmEdit(myBook, "edit", cwid);
+            if(myForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+            else
+            {
+                LoadList();
+            }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            Book myBook = new Book();
+
+            frmEdit myForm = new frmEdit(myBook, "new", cwid);
+            if (myForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+            else
+            {
+                LoadList();
+            }
         }
     }
 }
